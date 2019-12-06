@@ -12,6 +12,7 @@
 #purpose: Create blast databases from  NCBI RefSeq cnidarian genome assemblies
 
 module load blast/2.2.29+
+prodir="/scratch/projects/transcriptomics/mikeconnelly/projects/coral_immunogenomics"
 gendir="/scratch/projects/transcriptomics/mikeconnelly/sequences/genomes/coral"
 #9 RefSeq genome assemblies
 refseqs="GCF_000222465.1_Adig_1.1 GCF_004143615.1_amil_sf_1.1 GCF_002571385.1_Stylophora_pistillata_v1 GCF_003704095.1_ASM370409v1 GCF_002042975.1_ofav_dov_v1 GCF_004324835.1_DenGig_1.0 GCF_001417965.1_Aiptasia_genome_1.1 GCF_000209225.1_ASM20922v1 GCF_000004095.1_Hydra_RP_1.0"
