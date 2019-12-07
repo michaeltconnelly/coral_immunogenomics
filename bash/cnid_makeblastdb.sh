@@ -19,8 +19,10 @@ refs="GCF_000222465.1_Adig_1.1 GCF_004143615.1_amil_sf_1.1 GCF_002571385.1_Stylo
 touch ${prodir}/data/proteomes/db_protein_all.faa
 for ref in $refs
 do
+  echo "Concatenating ${ref} into overall protein fasta"
   gunzip ${prodir}/data/proteomes/${ref}_protein.faa.gz
-  cat ${prodir}/data/proteomes/${ref}_protein.faa.gz >> ${prodir}/data/proteomes/db_protein_all.faa
+  cat ${prodir}/data/proteomes/${ref}_protein.faa >> ${prodir}/data/proteomes/db_protein_all.faa
+  gzip ${prodir}/data/proteomes/${ref}_protein.faa
 done
 
 #Protein blast databases from protein fasta files
@@ -31,8 +33,3 @@ done
 -input_type 'fasta' \
 -out ${prodir}/data/blastdb_protein_all \
 -max_file_sz "4GB"
-
-for ref in $refs
-do
-  gzip ${prodir}/data/proteomes/${ref}_protein.faa
-done
