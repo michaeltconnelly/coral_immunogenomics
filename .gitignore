@@ -1,2 +1,4 @@
 .DS_Store
 data/proteomes/*protein*
+data/blastdb*
+data/blastdb_protein_all.*
