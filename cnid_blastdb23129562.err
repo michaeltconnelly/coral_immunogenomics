@@ -1,9 +1,0 @@
-cat: /scratch/projects/transcriptomics/mikeconnelly/projects/coral_immunogenomics/data/proteomes/GCF_000222465.1_Adig_1.1_protein.faa.gz: No such file or directory
-cat: /scratch/projects/transcriptomics/mikeconnelly/projects/coral_immunogenomics/data/proteomes/GCF_004143615.1_amil_sf_1.1_protein.faa.gz: No such file or directory
-cat: /scratch/projects/transcriptomics/mikeconnelly/projects/coral_immunogenomics/data/proteomes/GCF_002571385.1_Stylophora_pistillata_v1_protein.faa.gz: No such file or directory
-cat: /scratch/projects/transcriptomics/mikeconnelly/projects/coral_immunogenomics/data/proteomes/GCF_003704095.1_ASM370409v1_protein.faa.gz: No such file or directory
-cat: /scratch/projects/transcriptomics/mikeconnelly/projects/coral_immunogenomics/data/proteomes/GCF_002042975.1_ofav_dov_v1_protein.faa.gz: No such file or directory
-cat: /scratch/projects/transcriptomics/mikeconnelly/projects/coral_immunogenomics/data/proteomes/GCF_004324835.1_DenGig_1.0_protein.faa.gz: No such file or directory
-cat: /scratch/projects/transcriptomics/mikeconnelly/projects/coral_immunogenomics/data/proteomes/GCF_001417965.1_Aiptasia_genome_1.1_protein.faa.gz: No such file or directory
-cat: /scratch/projects/transcriptomics/mikeconnelly/projects/coral_immunogenomics/data/proteomes/GCF_000209225.1_ASM20922v1_protein.faa.gz: No such file or directory
-BLAST options error: File /scratch/projects/transcriptomics/mikeconnelly/projects/coral_immunogenomics/data/proteomes/db_protein_all.faa is empty
