@@ -1,4 +1,8 @@
 #!/bin/bash
+#~/projects/coral_immunogenomics/bash/cnid_blastdb.sh
+#/scratch/projects/transcriptomics/mikeconnelly//projects/coral_immunogenomics/bash/cnid_blastdb.sh
+#purpose: Create blast databases from  NCBI RefSeq cnidarian genome assemblies
+
 #BSUB -J cnid_genomes_blastdb
 #BSUB -q general
 #BSUB -P transcriptomics
@@ -6,10 +10,6 @@
 #BSUB -e cnid_blastdb%J.err
 #BSUB -n 8
 #BSUB -u m.connelly1@umiami.edu
-
-#~/scripts/coral_genomics/cnid_blastdb.sh
-#/scratch/projects/transcriptomics/mikeconnelly/scripts/coral_genomics/cnid_blastdb.sh
-#purpose: Create blast databases from  NCBI RefSeq cnidarian genome assemblies
 
 module load blast/2.2.29+
 prodir="/scratch/projects/transcriptomics/mikeconnelly/projects/coral_immunogenomics"
