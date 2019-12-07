@@ -24,7 +24,9 @@ done
 #Protein blast databases from protein fasta files
 /share/apps/blast+/2.2.29/bin/makeblastdb \
 -dbtype prot \
--in ${prodir}/data/proteomes/*_protein.faa \
+-in ${prodir}/data/proteomes/GCF_000222465.1_Adig_1.1_protein.faa \
+${prodir}/data/proteomes/GCF_004143615.1_amil_sf_1.1_protein.faa \
+${prodir}/data/proteomes/GCF_002571385.1_Stylophora_pistillata_v1 \
 -input_type 'fasta' \
 -out ${prodir}/cnid_RefSeq_protblastdb \
 -max_file_sz "4GB"
