@@ -1,2 +1,2 @@
 .DS_Store
-./data/proteomes/*protein*
+data/proteomes/*protein*
