@@ -23,7 +23,7 @@ done
 
 #Protein blast databases from protein fasta files
 /share/apps/blast+/2.2.29/bin/makeblastdb \
--dbtype `prot`\
+-dbtype prot \
 -in ${prodir}/data/proteomes/*_protein.faa \
 -input_type 'fasta' \
 -out ${prodir}/cnid_RefSeq_protblastdb \
