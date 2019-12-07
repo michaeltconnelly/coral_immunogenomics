@@ -1,0 +1,246 @@
+Sender: LSF System <lsfadmin@n272>
+Subject: Job 23128530: <cnid_genomes_RefSeq> in cluster <mk2> Done
+
+Job <cnid_genomes_RefSeq> was submitted from host <n272> by user <m.connelly> in cluster <mk2>.
+Job was executed on host(s) <8*n272>, in queue <general>, as user <m.connelly> in cluster <mk2>.
+</nethome/m.connelly> was used as the home directory.
+</scratch/projects/transcriptomics/mikeconnelly/projects/coral_immunogenomics> was used as the working directory.
+Started at Fri Dec  6 20:23:07 2019
+Results reported on Fri Dec  6 20:23:23 2019
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#~/projects/coral_immunogenomics/bash/cnid_RefSeq.sh
+#/scratch/projects/transcriptomics/mikeconnelly/projects/coral_immunogenomics/bash/cnid_RefSeq.sh
+#purpose: standard project directory structure and download cnidarian genome assemblies from NCBI RefSeq to Pegasus
+
+#BSUB -J cnid_genomes_RefSeq
+#BSUB -q general
+#BSUB -P transcriptomics
+#BSUB -o cnid_RefSeq%J.out
+#BSUB -e cnid_RefSeq%J.err
+#BSUB -n 8
+#BSUB -u m.connelly1@umiami.edu
+
+prodir="/scratch/projects/transcriptomics/mikeconnelly/projects/coral_immunogenomics"
+refseq="rsync://ftp.ncbi.nlm.nih.gov/genomes/all/GCF"
+#A. digitifera, A. millepora, S. pistillata, P. damicornis, O. faveolata, D. gigantea, E. pallida, N. vectensis
+targets="000/222/465/GCF_000222465.1_Adig_1.1 004/143/615/GCF_004143615.1_amil_sf_1.1 002/571/385/GCF_002571385.1_Stylophora_pistillata_v1 003/704/095/GCF_003704095.1_ASM370409v1 002/042/975/GCF_002042975.1_ofav_dov_v1 004/324/835/GCF_004324835.1_DenGig_1.0 001/417/965/GCF_001417965.1_Aiptasia_genome_1.1 000/209/225/GCF_000209225.1_ASM20922v1"
+for target in $targets
+do
+echo "Copying ${target} directory protein files from NCBI Refseq"
+rsync --copy-links --recursive --times --verbose \
+${refseq}/${target}/*protein* \
+${prodir}/data/proteomes
+done
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   0.73 sec.
+    Max Memory :                                 3 MB
+    Average Memory :                             3.00 MB
+    Total Requested Memory :                     12000.00 MB
+    Delta Memory :                               11997.00 MB
+    Max Swap :                                   460 MB
+    Max Processes :                              5
+    Max Threads :                                6
+
+The output (if any) follows:
+
+Copying 000/222/465/GCF_000222465.1_Adig_1.1 directory protein files from NCBI Refseq
+
+Warning Notice!
+
+You are accessing a U.S. Government information system which includes this
+computer, network, and all attached devices. This system is for
+Government-authorized use only. Unauthorized use of this system may result in
+disciplinary action and civil and criminal penalties. System users have no
+expectation of privacy regarding any communications or data processed by this
+system. At any time, the government may monitor, record, or seize any
+communication or data transiting or stored on this information system.
+
+-------------------------------------------------------------------------------
+
+Welcome to the NCBI rsync server.
+
+
+receiving incremental file list
+GCF_000222465.1_Adig_1.1_protein.faa.gz
+GCF_000222465.1_Adig_1.1_protein.gpff.gz
+
+sent 65 bytes  received 25532542 bytes  10213042.80 bytes/sec
+total size is 25526140  speedup is 1.00
+Copying 004/143/615/GCF_004143615.1_amil_sf_1.1 directory protein files from NCBI Refseq
+
+Warning Notice!
+
+You are accessing a U.S. Government information system which includes this
+computer, network, and all attached devices. This system is for
+Government-authorized use only. Unauthorized use of this system may result in
+disciplinary action and civil and criminal penalties. System users have no
+expectation of privacy regarding any communications or data processed by this
+system. At any time, the government may monitor, record, or seize any
+communication or data transiting or stored on this information system.
+
+-------------------------------------------------------------------------------
+
+Welcome to the NCBI rsync server.
+
+
+receiving incremental file list
+GCF_004143615.1_amil_sf_1.1_protein.faa.gz
+GCF_004143615.1_amil_sf_1.1_protein.gpff.gz
+
+sent 65 bytes  received 27920028 bytes  11168037.20 bytes/sec
+total size is 27913042  speedup is 1.00
+Copying 002/571/385/GCF_002571385.1_Stylophora_pistillata_v1 directory protein files from NCBI Refseq
+
+Warning Notice!
+
+You are accessing a U.S. Government information system which includes this
+computer, network, and all attached devices. This system is for
+Government-authorized use only. Unauthorized use of this system may result in
+disciplinary action and civil and criminal penalties. System users have no
+expectation of privacy regarding any communications or data processed by this
+system. At any time, the government may monitor, record, or seize any
+communication or data transiting or stored on this information system.
+
+-------------------------------------------------------------------------------
+
+Welcome to the NCBI rsync server.
+
+
+receiving incremental file list
+GCF_002571385.1_Stylophora_pistillata_v1_protein.faa.gz
+GCF_002571385.1_Stylophora_pistillata_v1_protein.gpff.gz
+
+sent 65 bytes  received 22263026 bytes  8905236.40 bytes/sec
+total size is 22257411  speedup is 1.00
+Copying 003/704/095/GCF_003704095.1_ASM370409v1 directory protein files from NCBI Refseq
+
+Warning Notice!
+
+You are accessing a U.S. Government information system which includes this
+computer, network, and all attached devices. This system is for
+Government-authorized use only. Unauthorized use of this system may result in
+disciplinary action and civil and criminal penalties. System users have no
+expectation of privacy regarding any communications or data processed by this
+system. At any time, the government may monitor, record, or seize any
+communication or data transiting or stored on this information system.
+
+-------------------------------------------------------------------------------
+
+Welcome to the NCBI rsync server.
+
+
+receiving incremental file list
+GCF_003704095.1_ASM370409v1_protein.faa.gz
+GCF_003704095.1_ASM370409v1_protein.gpff.gz
+
+sent 65 bytes  received 22271312 bytes  8908550.80 bytes/sec
+total size is 22265703  speedup is 1.00
+Copying 002/042/975/GCF_002042975.1_ofav_dov_v1 directory protein files from NCBI Refseq
+
+Warning Notice!
+
+You are accessing a U.S. Government information system which includes this
+computer, network, and all attached devices. This system is for
+Government-authorized use only. Unauthorized use of this system may result in
+disciplinary action and civil and criminal penalties. System users have no
+expectation of privacy regarding any communications or data processed by this
+system. At any time, the government may monitor, record, or seize any
+communication or data transiting or stored on this information system.
+
+-------------------------------------------------------------------------------
+
+Welcome to the NCBI rsync server.
+
+
+receiving incremental file list
+GCF_002042975.1_ofav_dov_v1_protein.faa.gz
+GCF_002042975.1_ofav_dov_v1_protein.gpff.gz
+
+sent 65 bytes  received 20349872 bytes  8139974.80 bytes/sec
+total size is 20344731  speedup is 1.00
+Copying 004/324/835/GCF_004324835.1_DenGig_1.0 directory protein files from NCBI Refseq
+
+Warning Notice!
+
+You are accessing a U.S. Government information system which includes this
+computer, network, and all attached devices. This system is for
+Government-authorized use only. Unauthorized use of this system may result in
+disciplinary action and civil and criminal penalties. System users have no
+expectation of privacy regarding any communications or data processed by this
+system. At any time, the government may monitor, record, or seize any
+communication or data transiting or stored on this information system.
+
+-------------------------------------------------------------------------------
+
+Welcome to the NCBI rsync server.
+
+
+receiving incremental file list
+GCF_004324835.1_DenGig_1.0_protein.faa.gz
+GCF_004324835.1_DenGig_1.0_protein.gpff.gz
+
+sent 65 bytes  received 25455726 bytes  16970527.33 bytes/sec
+total size is 25449342  speedup is 1.00
+Copying 001/417/965/GCF_001417965.1_Aiptasia_genome_1.1 directory protein files from NCBI Refseq
+
+Warning Notice!
+
+You are accessing a U.S. Government information system which includes this
+computer, network, and all attached devices. This system is for
+Government-authorized use only. Unauthorized use of this system may result in
+disciplinary action and civil and criminal penalties. System users have no
+expectation of privacy regarding any communications or data processed by this
+system. At any time, the government may monitor, record, or seize any
+communication or data transiting or stored on this information system.
+
+-------------------------------------------------------------------------------
+
+Welcome to the NCBI rsync server.
+
+
+receiving incremental file list
+GCF_001417965.1_Aiptasia_genome_1.1_protein.faa.gz
+GCF_001417965.1_Aiptasia_genome_1.1_protein.gpff.gz
+
+sent 65 bytes  received 25604811 bytes  17069917.33 bytes/sec
+total size is 25598386  speedup is 1.00
+Copying 000/209/225/GCF_000209225.1_ASM20922v1 directory protein files from NCBI Refseq
+
+Warning Notice!
+
+You are accessing a U.S. Government information system which includes this
+computer, network, and all attached devices. This system is for
+Government-authorized use only. Unauthorized use of this system may result in
+disciplinary action and civil and criminal penalties. System users have no
+expectation of privacy regarding any communications or data processed by this
+system. At any time, the government may monitor, record, or seize any
+communication or data transiting or stored on this information system.
+
+-------------------------------------------------------------------------------
+
+Welcome to the NCBI rsync server.
+
+
+receiving incremental file list
+GCF_000209225.1_ASM20922v1_protein.faa.gz
+GCF_000209225.1_ASM20922v1_protein.gpff.gz
+
+sent 65 bytes  received 12695610 bytes  5078270.00 bytes/sec
+total size is 12692343  speedup is 1.00
+
+
+PS:
+
+Read file <cnid_RefSeq23128530.err> for stderr output of this job.
+
