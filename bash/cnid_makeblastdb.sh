@@ -31,5 +31,5 @@ done
 
 for ref in $refs
 do
-  gzip ${prodir}/data/proteomes/${ref}_protein.faa.gz
+  gzip ${prodir}/data/proteomes/${ref}_protein.faa
 done
