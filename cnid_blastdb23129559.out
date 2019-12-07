@@ -1,12 +1,12 @@
-Sender: LSF System <lsfadmin@n255>
-Subject: Job 23129553: <cnid_genomes_blastdb> in cluster <mk2> Exited
+Sender: LSF System <lsfadmin@n259>
+Subject: Job 23129559: <cnid_genomes_blastdb> in cluster <mk2> Done
 
 Job <cnid_genomes_blastdb> was submitted from host <n253> by user <m.connelly> in cluster <mk2>.
-Job was executed on host(s) <8*n255>, in queue <general>, as user <m.connelly> in cluster <mk2>.
+Job was executed on host(s) <8*n259>, in queue <general>, as user <m.connelly> in cluster <mk2>.
 </nethome/m.connelly> was used as the home directory.
 </scratch/projects/transcriptomics/mikeconnelly/projects/coral_immunogenomics> was used as the working directory.
-Started at Sat Dec  7 13:58:35 2019
-Results reported on Sat Dec  7 13:58:35 2019
+Started at Sat Dec  7 14:17:11 2019
+Results reported on Sat Dec  7 14:17:18 2019
 
 Your job looked like:
 
@@ -37,21 +37,33 @@ done
 
 #Protein blast databases from protein fasta files
 /share/apps/blast+/2.2.29/bin/makeblastdb \
--dbtype `prot'\
--in ${prodir}/data/proteomes/*_protein.faa \
+-dbtype prot \
+-in ${prodir}/data/proteomes/GCF_000222465.1_Adig_1.1_protein.faa \
+${prodir}/data/proteomes/GCF_004143615.1_amil_sf_1.1_protein.faa \
+${prodir}/data/proteomes/GCF_002571385.1_Stylophora_pistillata_v1 \
 -input_type 'fasta' \
 -out ${prodir}/cnid_RefSeq_protblastdb \
 -max_file_sz "4GB"
 
+for ref in $refs
+do
+  gzip ${prodir}/data/proteomes/${ref}_protein.faa
+done
+
 ------------------------------------------------------------
 
-Exited with exit code 2.
+Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   0.04 sec.
+    CPU time :                                   6.79 sec.
+    Max Memory :                                 2 MB
+    Average Memory :                             2.00 MB
     Total Requested Memory :                     12000.00 MB
-    Delta Memory :                               -
+    Delta Memory :                               11998.00 MB
+    Max Swap :                                   237 MB
+    Max Processes :                              4
+    Max Threads :                                5
 
 The output (if any) follows:
 
@@ -59,5 +71,5 @@ The output (if any) follows:
 
 PS:
 
-Read file <cnid_blastdb23129553.err> for stderr output of this job.
+Read file <cnid_blastdb23129559.err> for stderr output of this job.
 
