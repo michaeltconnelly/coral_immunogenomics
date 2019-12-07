@@ -1,0 +1,83 @@
+Sender: LSF System <lsfadmin@n293>
+Subject: Job 23129560: <cnid_genomes_blastdb> in cluster <mk2> Done
+
+Job <cnid_genomes_blastdb> was submitted from host <n253> by user <m.connelly> in cluster <mk2>.
+Job was executed on host(s) <8*n293>, in queue <general>, as user <m.connelly> in cluster <mk2>.
+</nethome/m.connelly> was used as the home directory.
+</scratch/projects/transcriptomics/mikeconnelly/projects/coral_immunogenomics> was used as the working directory.
+Started at Sat Dec  7 14:20:24 2019
+Results reported on Sat Dec  7 14:20:33 2019
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#~/projects/coral_immunogenomics/bash/cnid_blastdb.sh
+#/scratch/projects/transcriptomics/mikeconnelly/projects/coral_immunogenomics/bash/cnid_makeblastdb.sh
+#purpose: Create blast databases from  NCBI RefSeq cnidarian genome assemblies
+
+#BSUB -J cnid_genomes_blastdb
+#BSUB -q general
+#BSUB -P transcriptomics
+#BSUB -o cnid_blastdb%J.out
+#BSUB -e cnid_blastdb%J.err
+#BSUB -n 8
+#BSUB -u m.connelly1@umiami.edu
+
+module load blast/2.2.29+
+prodir="/scratch/projects/transcriptomics/mikeconnelly/projects/coral_immunogenomics"
+
+#9 RefSeq genome assemblies
+refs="GCF_000222465.1_Adig_1.1 GCF_004143615.1_amil_sf_1.1 GCF_002571385.1_Stylophora_pistillata_v1 GCF_003704095.1_ASM370409v1 GCF_002042975.1_ofav_dov_v1 GCF_004324835.1_DenGig_1.0 GCF_001417965.1_Aiptasia_genome_1.1 GCF_000209225.1_ASM20922v1"
+for ref in $refs
+do
+  gunzip ${prodir}/data/proteomes/${ref}_protein.faa.gz
+done
+
+#Protein blast databases from protein fasta files
+/share/apps/blast+/2.2.29/bin/makeblastdb \
+-dbtype prot \
+-in ${prodir}/data/proteomes/GCF_000222465.1_Adig_1.1_protein.faa \
+-input_type 'fasta' \
+-out ${prodir}/cnid_RefSeq_protblastdb \
+-max_file_sz "4GB"
+
+for ref in $refs
+do
+  gzip ${prodir}/data/proteomes/${ref}_protein.faa
+done
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   8.23 sec.
+    Max Memory :                                 2 MB
+    Average Memory :                             2.00 MB
+    Total Requested Memory :                     12000.00 MB
+    Delta Memory :                               11998.00 MB
+    Max Swap :                                   233 MB
+    Max Processes :                              3
+    Max Threads :                                4
+
+The output (if any) follows:
+
+
+
+Building a new DB, current time: 12/07/2019 14:20:26
+New DB name:   /scratch/projects/transcriptomics/mikeconnelly/projects/coral_immunogenomics/cnid_RefSeq_protblastdb
+New DB title:  /scratch/projects/transcriptomics/mikeconnelly/projects/coral_immunogenomics/data/proteomes/GCF_000222465.1_Adig_1.1_protein.faa
+Sequence type: Protein
+Keep Linkouts: T
+Keep MBits: T
+Maximum file size: 4000000000B
+Adding sequences from FASTA; added 33878 sequences in 1.54773 seconds.
+
+
+PS:
+
+Read file <cnid_blastdb23129560.err> for stderr output of this job.
+
