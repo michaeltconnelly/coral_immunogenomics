@@ -24,9 +24,10 @@ done
 #Protein blast databases from protein fasta files
 /share/apps/blast+/2.2.29/bin/makeblastdb \
 -dbtype prot \
--in ${prodir}/data/proteomes/GCF_000222465.1_Adig_1.1_protein.faa \
+-parse_seqids \
+-in ${prodir}/data/proteomes/*_protein.faa \
 -input_type 'fasta' \
--out ${prodir}/cnid_RefSeq_protblastdb \
+-out ${prodir}/data/cnid_RefSeq_protblastdb \
 -max_file_sz "4GB"
 
 for ref in $refs
