@@ -13,6 +13,6 @@ module load blast/2.2.29+
 prodir="/scratch/projects/transcriptomics/mikeconnelly/projects/coral_immunogenomics"
 
 /share/apps/blast+/2.2.29/bin/blastp \
--db \
--query \
--out
+-db ${prodir}/data/blastdb_protein_all \
+-query ${prodir}/query/nfkb.fasta \
+-out ${prodir}/outputs/blastdb_protein_all
