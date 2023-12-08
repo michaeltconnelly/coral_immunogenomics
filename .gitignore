@@ -2,7 +2,4 @@
 data/proteomes/*protein*
 data/blastdb*
 data/blastdb_protein_all.*
-.DS_Store
-.DS_Store
-output/C3_tree_top30.pdf output/TIR_tree_top30.pdf output/sequenceserver-30_C3_hits.fasta output/sequenceserver-30_C3_hits.meg output/sequenceserver-30_hits.fasta output/sequenceserver-30_hits.meg output/sequenceserver-std_tsv_report.tsv
-./output/C3_tree_top30.pdf ./output/TIR_tree_top30.pdf ./output/sequenceserver-30_C3_hits.fasta ./output/sequenceserver-30_C3_hits.meg ./output/sequenceserver-30_hits.fasta ./output/sequenceserver-30_hits.meg ./output/sequenceserver-std_tsv_report.tsv
+./output/
